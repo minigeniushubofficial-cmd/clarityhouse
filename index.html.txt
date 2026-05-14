@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="p:domain_verify" content="aa46d4de601dec5a1353311c17ba5195"/>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>The Sandwich Generation Survival Guide — Clarity House</title>
+<meta name="description" content="Caring for aging parents while raising kids? This is the plan no one handed you. A 9-chapter system for the adult doing too much alone."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy:    #0E2A45;
+    --navy-mid:#1B3F62;
+    --blue:    #2A6496;
+    --blue-lt: #4A8FBF;
+    --cream:   #F9F5EF;
+    --warm:    #F2EAD8;
+    --amber:   #C8864A;
+    --amber-lt:#E8A96A;
+    --text:    #1A1A1A;
+    --muted:   #6B6B6B;
+    --border:  #DDD5C5;
+    --white:   #FFFFFF;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--navy);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 24px 50px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 20% 20%, rgba(42,100,150,0.25) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 40% at 80% 80%, rgba(200,134,74,0.12) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    max-width: 540px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .brand-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--amber-lt);
+    margin-bottom: 28px;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.1s ease forwards;
+  }
+
+  .brand-tag::before {
+    content: '';
+    width: 24px;
+    height: 1px;
+    background: var(--amber-lt);
+  }
+
+  .brand-tag::after {
+    content: '';
+    width: 24px;
+    height: 1px;
+    background: var(--amber-lt);
+  }
+
+  .hero-title {
+    font-family: 'Lora', Georgia, serif;
+    font-size: clamp(32px, 7vw, 48px);
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.15;
+    margin-bottom: 8px;
+    opacity: 0;
+    animation: fadeUp 0.7s 0.25s ease forwards;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--amber-lt);
+  }
+
+  .hero-sub {
+    font-family: 'Lora', Georgia, serif;
+    font-size: clamp(14px, 3.5vw, 17px);
+    font-weight: 400;
+    font-style: italic;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.6;
+    margin-bottom: 36px;
+    opacity: 0;
+    animation: fadeUp 0.7s 0.4s ease forwards;
+  }
+
+  .hero-hook {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 12px;
+    padding: 20px 22px;
+    margin-bottom: 32px;
+    text-align: left;
+    opacity: 0;
+    animation: fadeUp 0.7s 0.55s ease forwards;
+  }
+
+  .hero-hook p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.80);
+    line-height: 1.75;
+  }
+
+  .hero-hook p + p { margin-top: 10px; }
+
+  .hero-hook strong {
+    color: var(--white);
+    font-weight: 600;
+  }
+
+  .cta-primary {
+    display: block;
+    width: 100%;
+    background: var(--amber);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    padding: 17px 28px;
+    border-radius: 10px;
+    text-align: center;
+    transition: background 0.2s ease, transform 0.15s ease;
+    margin-bottom: 12px;
+    opacity: 0;
+    animation: fadeUp 0.7s 0.7s ease forwards;
+  }
+
+  .cta-primary:hover { background: #B5733A; transform: translateY(-1px); }
+
+  .cta-note {
+    font-size: 12px;
+    color: rgba(255,255,255,0.40);
+    opacity: 0;
+    animation: fadeUp 0.6s 0.85s ease forwards;
+  }
+
+  /* ── PAIN STRIP ── */
+  .pain-strip {
+    background: var(--warm);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 36px 24px;
+  }
+
+  .pain-strip-inner {
+    max-width: 540px;
+    margin: 0 auto;
+  }
+
+  .pain-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 18px;
+    text-align: center;
+  }
+
+  .pain-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .pain-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 14px;
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  .pain-check {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--navy);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .pain-check svg { width: 10px; height: 10px; }
+
+  /* ── STAT SECTION ── */
+  .stat-section {
+    background: var(--navy-mid);
+    padding: 48px 24px;
+    text-align: center;
+  }
+
+  .stat-inner { max-width: 540px; margin: 0 auto; }
+
+  .stat-number {
+    font-family: 'Lora', Georgia, serif;
+    font-size: clamp(48px, 12vw, 72px);
+    font-weight: 700;
+    color: var(--amber-lt);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .stat-label {
+    font-size: 15px;
+    color: rgba(255,255,255,0.70);
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+
+  .stat-divider {
+    width: 40px;
+    height: 2px;
+    background: var(--amber);
+    margin: 0 auto 24px;
+  }
+
+  .stat-sub {
+    font-size: 13px;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.7;
+    font-style: italic;
+    font-family: 'Lora', Georgia, serif;
+  }
+
+  /* ── WHAT'S INSIDE ── */
+  .inside-section {
+    background: var(--cream);
+    padding: 56px 24px;
+  }
+
+  .inside-inner { max-width: 540px; margin: 0 auto; }
+
+  .section-heading {
+    font-family: 'Lora', Georgia, serif;
+    font-size: clamp(22px, 5vw, 28px);
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 6px;
+    line-height: 1.25;
+  }
+
+  .section-sub {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 32px;
+    line-height: 1.6;
+  }
+
+  .chapter-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .chapter-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .chapter-item:last-child { border-bottom: none; }
+
+  .ch-num {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--amber);
+    letter-spacing: 0.05em;
+    min-width: 28px;
+    padding-top: 2px;
+  }
+
+  .ch-body {}
+
+  .ch-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 2px;
+    line-height: 1.35;
+  }
+
+  .ch-desc {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+
+  /* ── QUOTE ── */
+  .quote-section {
+    background: var(--navy);
+    padding: 52px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .quote-section::before {
+    content: '"';
+    font-family: 'Lora', Georgia, serif;
+    font-size: 200px;
+    color: rgba(255,255,255,0.04);
+    position: absolute;
+    top: -20px;
+    left: 10px;
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .quote-inner {
+    max-width: 540px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .quote-text {
+    font-family: 'Lora', Georgia, serif;
+    font-size: clamp(17px, 4vw, 22px);
+    font-style: italic;
+    color: rgba(255,255,255,0.88);
+    line-height: 1.65;
+    margin-bottom: 20px;
+  }
+
+  .quote-attr {
+    font-size: 12px;
+    color: var(--amber-lt);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* ── TOOLS ── */
+  .tools-section {
+    background: var(--warm);
+    padding: 52px 24px;
+    border-top: 1px solid var(--border);
+  }
+
+  .tools-inner { max-width: 540px; margin: 0 auto; }
+
+  .tools-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 28px;
+  }
+
+  .tool-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 14px;
+  }
+
+  .tool-icon {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
+  .tool-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 4px;
+    line-height: 1.3;
+  }
+
+  .tool-desc {
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  /* ── PRICE + CTA ── */
+  .price-section {
+    background: var(--cream);
+    padding: 56px 24px 64px;
+    text-align: center;
+  }
+
+  .price-inner { max-width: 440px; margin: 0 auto; }
+
+  .price-badge {
+    display: inline-block;
+    background: #E8F4E8;
+    color: #1A6030;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 20px;
+    border: 1px solid #A8D8A8;
+    margin-bottom: 18px;
+  }
+
+  .price-heading {
+    font-family: 'Lora', Georgia, serif;
+    font-size: clamp(26px, 6vw, 36px);
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+
+  .price-sub {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.65;
+    margin-bottom: 28px;
+  }
+
+  .price-display {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 6px;
+    margin-bottom: 6px;
+  }
+
+  .price-amount {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 52px;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1;
+  }
+
+  .price-currency {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--navy-mid);
+    align-self: flex-start;
+    margin-top: 8px;
+  }
+
+  .price-note {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 28px;
+    font-style: italic;
+  }
+
+  .cta-final {
+    display: block;
+    width: 100%;
+    background: var(--navy);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 18px 28px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 12px;
+    transition: background 0.2s ease, transform 0.15s ease;
+  }
+
+  .cta-final:hover { background: var(--navy-mid); transform: translateY(-1px); }
+
+  .guarantee {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--navy);
+    padding: 28px 24px;
+    text-align: center;
+  }
+
+  .footer-brand {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 6px;
+  }
+
+  .footer-tagline {
+    font-size: 12px;
+    color: rgba(255,255,255,0.35);
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="brand-tag">Clarity House</div>
+
+    <h1 class="hero-title">
+      Caring for your parents,<br>
+      raising your kids —<br>
+      <em>now what?</em>
+    </h1>
+
+    <p class="hero-sub">
+      The plan no one handed the sandwich generation.
+    </p>
+
+    <div class="hero-hook">
+      <p>You're managing <strong>medical appointments, school runs, work deadlines, and a relationship</strong> — all at once, all at full capacity.</p>
+      <p>You're not failing. You're just doing <strong>too much alone</strong> — without a system designed for exactly this.</p>
+    </div>
+
+    <a href="YOUR_WHOP_LINK_HERE" class="cta-primary">
+      Get the Guide — $47 →
+    </a>
+    <p class="cta-note">Instant digital download · 9-chapter system · 90-day plan included</p>
+  </div>
+</section>
+
+<!-- PAIN STRIP -->
+<section class="pain-strip">
+  <div class="pain-strip-inner">
+    <p class="pain-label">Does this sound familiar?</p>
+    <ul class="pain-list">
+      <li>
+        <span class="pain-check">
+          <svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        You feel guilty no matter what you do — your parent needs more, your kids need more, your work needs more
+      </li>
+      <li>
+        <span class="pain-check">
+          <svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        Your savings are quietly disappearing — eldercare costs nobody warned you about
+      </li>
+      <li>
+        <span class="pain-check">
+          <svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        Your career is paying a price you cannot fully see yet — but you can feel it
+      </li>
+      <li>
+        <span class="pain-check">
+          <svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        Your relationship has become logistics — not a partnership
+      </li>
+      <li>
+        <span class="pain-check">
+          <svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        You are last on every list — including your own
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- STAT -->
+<section class="stat-section">
+  <div class="stat-inner">
+    <div class="stat-number reveal">16M</div>
+    <p class="stat-label reveal">Americans are living this right now.<br>Almost none of them have a plan.</p>
+    <div class="stat-divider reveal"></div>
+    <p class="stat-sub reveal">"61% of sandwich generation caregivers are at high or moderate risk of burnout — a 15% increase from four years ago."</p>
+  </div>
+</section>
+
+<!-- WHAT'S INSIDE -->
+<section class="inside-section">
+  <div class="inside-inner">
+    <h2 class="section-heading reveal">A complete system.<br>Not a list of tips.</h2>
+    <p class="section-sub reveal">9 chapters. Every dimension of your situation — covered.</p>
+
+    <ul class="chapter-list">
+      <li class="chapter-item reveal">
+        <span class="ch-num">01</span>
+        <div class="ch-body">
+          <p class="ch-title">You Are Not Alone</p>
+          <p class="ch-desc">The research, the scale, and why recognition is the first step toward managing this.</p>
+        </div>
+      </li>
+      <li class="chapter-item reveal">
+        <span class="ch-num">02</span>
+        <div class="ch-body">
+          <p class="ch-title">The Burnout Audit</p>
+          <p class="ch-desc">A 5-domain self-assessment that shows exactly where you are most depleted — before you make a plan.</p>
+        </div>
+      </li>
+      <li class="chapter-item reveal">
+        <span class="ch-num">03</span>
+        <div class="ch-body">
+          <p class="ch-title">Managing Eldercare</p>
+          <p class="ch-desc">Medical navigation, sibling dynamics, living arrangement decisions, and the conversations most families avoid.</p>
+        </div>
+      </li>
+      <li class="chapter-item reveal">
+        <span class="ch-num">04</span>
+        <div class="ch-body">
+          <p class="ch-title">Still a Parent</p>
+          <p class="ch-desc">Age-by-age strategies for staying present with your children when your reserves are empty.</p>
+        </div>
+      </li>
+      <li class="chapter-item reveal">
+        <span class="ch-num">05</span>
+        <div class="ch-body">
+          <p class="ch-title">The Financial Squeeze</p>
+          <p class="ch-desc">Three-generation budgeting, the conversations nobody has, and how to stop the quiet financial bleeding.</p>
+        </div>
+      </li>
+      <li class="chapter-item reveal">
+        <span class="ch-num">06</span>
+        <div class="ch-body">
+          <p class="ch-title">Protecting Your Career</p>
+          <p class="ch-desc">Scripts for your employer, flexibility frameworks, and how to protect your professional future right now.</p>
+        </div>
+      </li>
+      <li class="chapter-item reveal">
+        <span class="ch-num">07</span>
+        <div class="ch-body">
+          <p class="ch-title">Your Relationship</p>
+          <p class="ch-desc">The daily check-in protocol, repair conversations, and how to rebuild intimacy that stress has eroded.</p>
+        </div>
+      </li>
+      <li class="chapter-item reveal">
+        <span class="ch-num">08</span>
+        <div class="ch-body">
+          <p class="ch-title">Building Your Support System</p>
+          <p class="ch-desc">The four circles of support, how to ask for help in a way that actually works, and professional resources you don't know exist.</p>
+        </div>
+      </li>
+      <li class="chapter-item reveal">
+        <span class="ch-num">09</span>
+        <div class="ch-body">
+          <p class="ch-title">The 90-Day Survival Plan</p>
+          <p class="ch-desc">A week-by-week action plan built around your specific Burnout Profile. This is the crown jewel.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="quote-section">
+  <div class="quote-inner">
+    <p class="quote-text reveal">"You took on the weight of two generations because you are the kind of person who does. That same quality is exactly what makes you worth protecting."</p>
+    <p class="quote-attr reveal">— The Sandwich Generation Survival Guide</p>
+  </div>
+</section>
+
+<!-- TOOLS -->
+<section class="tools-section">
+  <div class="tools-inner">
+    <h2 class="section-heading reveal">Not just reading material.<br>Working tools.</h2>
+    <p class="section-sub reveal">Every chapter includes frameworks you use, not just ideas you absorb.</p>
+    <div class="tools-grid">
+      <div class="tool-card reveal">
+        <div class="tool-icon">📋</div>
+        <p class="tool-title">Burnout Audit Worksheet</p>
+        <p class="tool-desc">Score yourself across 5 domains. Know exactly where to start.</p>
+      </div>
+      <div class="tool-card reveal">
+        <div class="tool-icon">💬</div>
+        <p class="tool-title">Conversation Scripts</p>
+        <p class="tool-desc">Word-for-word scripts for siblings, employers, and partners.</p>
+      </div>
+      <div class="tool-card reveal">
+        <div class="tool-icon">💰</div>
+        <p class="tool-title">Financial Audit</p>
+        <p class="tool-desc">Map your three-generation financial picture in one worksheet.</p>
+      </div>
+      <div class="tool-card reveal">
+        <div class="tool-icon">📅</div>
+        <p class="tool-title">90-Day Action Plan</p>
+        <p class="tool-desc">Week-by-week. Built around your specific situation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICE + CTA -->
+<section class="price-section">
+  <div class="price-inner">
+    <span class="price-badge reveal">Launch Price</span>
+    <h2 class="price-heading reveal">Stop surviving it.<br>Start managing it.</h2>
+    <p class="price-sub reveal">One guide. Every dimension of your situation — covered. A plan you can start today.</p>
+
+    <div class="price-display reveal">
+      <span class="price-currency">$</span>
+      <span class="price-amount">47</span>
+    </div>
+    <p class="price-note reveal">Price increases to $67 after launch period</p>
+
+    <a href="YOUR_WHOP_LINK_HERE" class="cta-final reveal">
+      Get Instant Access →
+    </a>
+    <p class="guarantee reveal">Instant download · PDF format · Start reading in 60 seconds</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p class="footer-brand">Clarity House</p>
+  <p class="footer-tagline">Where people come to think clearly and move forward.</p>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, i * 60);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
